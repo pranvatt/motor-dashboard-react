@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motor Health Monitor — Single-Phase Induction Motor</title>
+    <meta
+      name="description"
+      content="Real-time condition monitoring for a 1 HP 230V single-phase induction motor — current, voltage, temperature, vibration and speed with threshold alerts."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:title" content="Single-Phase Induction Motor — Health Monitor" />
+    <meta
+      property="og:description"
+      content="Live current, voltage, temperature, vibration and speed with predictive threshold alerts."
+    />
+    <meta property="og:type" content="website" />
+    <script>
+      // Apply the saved theme before first paint so there is no light/dark flash.
+      try {
+        var t = localStorage.getItem("motorDashTheme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
